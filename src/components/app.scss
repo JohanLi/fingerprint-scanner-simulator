@@ -1,5 +1,7 @@
 .app {
   padding: 10px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .fingerStats {
@@ -57,9 +59,18 @@
 
 .about {
   margin: 40px 0 20px 0;
+
+  a {
+    text-decoration: none;
+    color: #4afcfe;
+  }
 }
 
-.heading {
+h2 {
   font-size: 1.4em;
-  margin: 0;
+  margin: 40px 0 10px 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
 }

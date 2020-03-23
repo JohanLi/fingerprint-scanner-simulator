@@ -102,8 +102,39 @@ const App = (): ReactElement => {
         {choicesJsx}
       </div>
       <div className={styles.about}>
-        <h1 className={styles.heading}>GTA Online Choice Scanner Simulator</h1>
-
+        <h2>What’s this?</h2>
+        <p>
+          <i>The Diamond Casino Heist</i> in GTA Online introduces two hacking minigames, one of them being the
+          fingerprint scanner. To maximize your take, you have to be fast. Use this simulator to practice – outside
+          the heist, without the loading screens, on your phone!
+        </p>
+        <p>
+          There are 4 fingerprints in total. For each fingerprint, click/tap on the 4 elements (parts, segments)
+          that make up the fingerprint.
+        </p>
+        <h2>Easy, Normal, Hard, huh?</h2>
+        <p>
+          Easy matches 1 element at a time, while Normal matches all four at once.
+        </p>
+        <p>
+          Hard hides all fingerprints, leaving you to select the correct 4 elements based on the 8 elements
+          (which are always the same for each fingerprint). Once you’ve practiced, you’ll be able to manage
+          this.
+        </p>
+        <h2>How is this simulator different from the actual minigame?</h2>
+        <p>
+          The actual minigame has a bunch of delay screens and requires you to press more buttons. It also
+          has limits on time and number of guess. Generous limits, if you haven’t been skipping practice :)
+        </p>
+        <h2>What’s up with the strange website address?</h2>
+        <p>
+          My name is Johan Li, and this is my personal website. If you are interested in software development,
+          you may find the rest of my website interesting. <a href="https://github.com/JohanLi">Follow me on GitHub</a> if
+          that’s the case!
+        </p>
+        <p>
+          If you have feedback on this simulator, reach out to me. Should it work more similar to the actual minigame?
+        </p>
       </div>
     </div>
   );
