@@ -1,0 +1,65 @@
+.app {
+  padding: 10px;
+}
+
+.fingerStats {
+  display: flex;
+}
+
+.stats {
+  margin: auto 0 0 auto;
+  text-align: right;
+  padding: 0 8px 20px 0;
+}
+
+.lastRun {
+  opacity: 0.4;
+}
+
+.thisRun {
+  margin-top: 10px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 0.6em;
+  white-space: nowrap;
+}
+
+.fingerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 280px;
+}
+
+.finger {
+  width: 100%;
+  display: block;
+  margin: 20px 0;
+  opacity: 0.4;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.choice {
+  width: 25%;
+  display: block;
+  opacity: 0.4;
+}
+
+.choice.selected {
+  opacity: 1;
+}
+
+.about {
+  margin: 40px 0 20px 0;
+}
+
+.heading {
+  font-size: 1.4em;
+  margin: 0;
+}
