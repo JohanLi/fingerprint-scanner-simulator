@@ -1,7 +1,17 @@
 .app {
+  background: #000;
+  transition: all 0.5s ease-out;
+
+  &.wrongFlash {
+    background: #ff0000;
+    transition-duration: 0s;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
   padding: 10px;
   max-width: 600px;
-  margin: 0 auto;
 }
 
 .fingerStats {
@@ -12,6 +22,21 @@
   margin: auto 0 0 auto;
   text-align: right;
   padding: 0 8px 20px 0;
+}
+
+.mode {
+  text-transform: uppercase;
+
+
+  div {
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.4;
+
+    &.active {
+      opacity: 1;
+    }
+  }
 }
 
 .lastRun {
@@ -40,6 +65,10 @@
   display: block;
   margin: 20px 0;
   opacity: 0.4;
+
+  &.hidden {
+    visibility: hidden;
+  }
 }
 
 .choices {
@@ -51,6 +80,7 @@
   width: 25%;
   display: block;
   opacity: 0.4;
+  cursor: pointer;
 }
 
 .choice.selected {
