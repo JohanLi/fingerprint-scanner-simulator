@@ -104,18 +104,18 @@ const App = (): ReactElement => {
   return (
     <div className={appClass}>
       <div className={styles.wrapper}>
-        <div className={styles.fingerStats}>
-          <div className={styles.fingerWrapper}>
+        <div className={styles.fingerprintModeStats}>
+          <div className={styles.fingerprintWrapper}>
             <img
               src={fingerprintAssets(`./finger-${shuffledFingerprints[0]}.png`).default}
               className={classNames({
-                [styles.finger]: true,
+                [styles.fingerprint]: true,
                 [styles.hidden]: hideFingerprint,
               })}
               draggable={false}
             />
           </div>
-          <div className={styles.stats}>
+          <div className={styles.modeStats}>
             <div className={styles.mode}>
               <div
                 className={classNames({
@@ -131,20 +131,22 @@ const App = (): ReactElement => {
                 })}
                 onClick={() => setHideFingerprint(true)}
               >
-                Expert
+                Hard
               </div>
             </div>
-            <div className={styles.lastRun}>
-              <div className={styles.title}>
-                Last run
+            <div className={styles.stats}>
+              <div className={styles.lastRun}>
+                <div className={styles.title}>
+                  Last run
+                </div>
+                {lastRun ? formatTimestamp(lastRun) : '-'}
               </div>
-              {lastRun ? formatTimestamp(lastRun) : '-'}
-            </div>
-            <div className={styles.thisRun}>
-              <div className={styles.title}>
-                This run
+              <div className={styles.thisRun}>
+                <div className={styles.title}>
+                  This run
+                </div>
+                {formatTimestamp(thisRun)}
               </div>
-              {formatTimestamp(thisRun)}
             </div>
           </div>
         </div>
@@ -159,22 +161,21 @@ const App = (): ReactElement => {
             the heist, without the loading screens, on your phone!
           </p>
           <p>
-            There are 4 fingerprints in total. For each fingerprint, click/tap on the 4 elements (parts, segments)
+            There are 4 fingerprints in total. For each fingerprint, tap/click on the 4 elements (parts, segments)
             that make up the fingerprint.
           </p>
-          <h2>Easy, Normal, Hard, huh?</h2>
+          <h2>Normal, Hard, huh?</h2>
           <p>
-            Easy matches 1 element at a time, while Normal matches all four at once.
+            Hard leaves you to select the correct 4 elements without looking at each fingerprint. Once you’ve
+            practiced enough, you’ll manage. This is how you hack the fastest in the actual heist!
           </p>
           <p>
-            Hard hides all fingerprints, leaving you to select the correct 4 elements based on the 8 elements
-            (which are always the same for each fingerprint). Once you’ve practiced, you’ll be able to manage
-            this.
+            These two modes have no connection to the heist.
           </p>
           <h2>How is this simulator different from the actual minigame?</h2>
           <p>
             The actual minigame has a bunch of delay screens and requires you to press more buttons. It also
-            has limits on time and number of guess. Generous limits, if you haven’t been skipping practice :)
+            has limits on time and number of guess. Generous limits, if you haven’t been skipping practice.
           </p>
           <h2>What’s up with the strange website address?</h2>
           <p>
@@ -183,7 +184,7 @@ const App = (): ReactElement => {
             that’s the case!
           </p>
           <p>
-            If you have feedback on this simulator, reach out to me. Should it work more similar to the actual minigame?
+            If you have feedback on this simulator, reach out to me. Should it work more similar to the minigame?
           </p>
         </div>
       </div>

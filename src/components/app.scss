@@ -14,56 +14,21 @@
   max-width: 600px;
 }
 
-.fingerStats {
+.fingerprintModeStats {
   display: flex;
+  padding: 10px 0 30px 0;
 }
 
-.stats {
-  margin: auto 0 0 auto;
-  text-align: right;
-  padding: 0 8px 20px 0;
-}
-
-.mode {
-  text-transform: uppercase;
-
-
-  div {
-    cursor: pointer;
-    user-select: none;
-    opacity: 0.4;
-
-    &.active {
-      opacity: 1;
-    }
-  }
-}
-
-.lastRun {
-  opacity: 0.4;
-}
-
-.thisRun {
-  margin-top: 10px;
-}
-
-.title {
-  text-transform: uppercase;
-  font-size: 0.6em;
-  white-space: nowrap;
-}
-
-.fingerWrapper {
+.fingerprintWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 280px;
+  max-width: 350px;
 }
 
-.finger {
+.fingerprint {
   width: 100%;
   display: block;
-  margin: 20px 0;
   opacity: 0.4;
 
   &.hidden {
@@ -71,13 +36,57 @@
   }
 }
 
+.modeStats {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding: 0 8px 0 0;
+  margin-left: auto;
+}
+
+.mode {
+  text-transform: uppercase;
+  font-size: 0.8em;
+
+  div {
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.4;
+    margin-bottom: 10px;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.stats {
+  margin-top: auto;
+
+  .lastRun {
+    opacity: 0.4;
+  }
+
+  .thisRun {
+    margin-top: 10px;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-size: 0.6em;
+    white-space: nowrap;
+  }
+}
+
 .choices {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .choice {
   width: 25%;
+  max-width: 128px;
   display: block;
   opacity: 0.4;
   cursor: pointer;
@@ -102,5 +111,15 @@ h2 {
 
   &:first-of-type {
     margin-top: 0;
+  }
+}
+
+@media only screen and (min-device-width : 768px) {
+  .mode {
+    font-size: 1.2em;
+  }
+
+  .stats {
+    font-size: 1.5em;
   }
 }
