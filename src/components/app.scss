@@ -39,6 +39,7 @@ body {
 .fingerprint {
   width: 100%;
   height: auto;
+  max-height: 55vh;
   object-fit: contain;
   display: block;
   opacity: 0.4;
