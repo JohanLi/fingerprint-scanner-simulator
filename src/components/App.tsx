@@ -81,19 +81,24 @@ const App = (): ReactElement => {
         [styles.selected]: selected,
       });
 
-      return <img
-        src={fingerprintAssets(`./finger-${shuffledFingerprints[0]}-${i}.png`).default}
-        className={className}
-        draggable={false}
-        onClick={() => {
-          if (selected) {
-            setSelectedElement(selectedElement.filter(choice => choice !== i));
-          } else {
-            setSelectedElement([...selectedElement, i]);
-          }
-        }}
-        key={`${shuffledFingerprints[0]}-${i}`}
-      />;
+      return (
+        <div
+          className={className}
+          onClick={() => {
+            if (selected) {
+              setSelectedElement(selectedElement.filter(choice => choice !== i));
+            } else {
+              setSelectedElement([...selectedElement, i]);
+            }
+          }}
+          key={`${shuffledFingerprints[0]}-${i}`}
+        >
+          <img
+            src={fingerprintAssets(`./finger-${shuffledFingerprints[0]}-${i}.png`).default}
+            draggable={false}
+          />
+        </div>
+      );
     });
 
   const appClass = classNames({

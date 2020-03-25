@@ -1,5 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-width: 320px;
+}
+
 .app {
   background: #000;
+  color: #fff;
   transition: all 0.5s ease-out;
 
   &.wrongFlash {
@@ -21,13 +34,11 @@
 
 .fingerprintWrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 350px;
 }
 
 .fingerprint {
   width: 100%;
+  object-fit: contain;
   display: block;
   opacity: 0.4;
 
@@ -86,14 +97,18 @@
 
 .choice {
   width: 25%;
-  max-width: 128px;
-  display: block;
   opacity: 0.4;
   cursor: pointer;
-}
 
-.choice.selected {
-  opacity: 1;
+  img {
+    width: 100%;
+    max-width: 128px;
+    display: block;
+  }
+
+  &.selected {
+    opacity: 1;
+  }
 }
 
 .about {

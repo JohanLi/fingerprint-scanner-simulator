@@ -4,7 +4,6 @@ import { hot } from 'react-hot-loader/root';
 import { loadAssets } from './assets';
 
 import App from './components/App';
-import './index.scss';
 
 const HotApp = hot(App);
 
