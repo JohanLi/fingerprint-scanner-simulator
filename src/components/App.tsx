@@ -96,6 +96,8 @@ const App = (): ReactElement => {
           <img
             src={fingerprintAssets(`./finger-${shuffledFingerprints[0]}-${i}.png`).default}
             draggable={false}
+            width="128"
+            height="128"
           />
         </div>
       );
@@ -118,6 +120,8 @@ const App = (): ReactElement => {
                 [styles.hidden]: hideFingerprint,
               })}
               draggable={false}
+              width="400"
+              height="512"
             />
           </div>
           <div className={styles.modeStats}>

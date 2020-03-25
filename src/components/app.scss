@@ -38,6 +38,7 @@ body {
 
 .fingerprint {
   width: 100%;
+  height: auto;
   object-fit: contain;
   display: block;
   opacity: 0.4;
@@ -102,6 +103,7 @@ body {
 
   img {
     width: 100%;
+    height: auto;
     max-width: 128px;
     display: block;
   }
