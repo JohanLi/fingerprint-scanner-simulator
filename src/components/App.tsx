@@ -181,19 +181,16 @@ const App = (): ReactElement => {
           <p>
             These two modes have no connection to the heist.
           </p>
-          <h2>How is this simulator different from the actual minigame?</h2>
-          <p>
-            The actual minigame has a bunch of delay screens and requires you to press more buttons. It also
-            has limits on time and number of guess. Generous limits, if you haven’t been skipping practice.
-          </p>
           <h2>What’s up with the strange website address?</h2>
           <p>
-            My name is Johan Li, and this is my personal website. If you are interested in software development,
-            you may find the rest of my website interesting. <a href="https://github.com/JohanLi">Follow me on GitHub</a> if
-            that’s the case!
+            My name is Johan Li, and this is my personal website. I’m a software developer, and have worked in the
+            gaming industry for Paradox Interactive. If you’re also into software development and tech in general,
+            I hope you find <a href="https://johan.li">my articles</a> interesting!
           </p>
           <p>
-            If you have feedback on this simulator, reach out to me. Should it work more similar to the minigame?
+            If you have feedback on this simulator, reach out to me via <a href="mailto:hi@johan.li">hi@johan.li</a>.
+            I’ve done the Casino Heist many times – if you’d be interested in me creating a guide with tips and
+            tricks on how to do both the heist and set ups quickly, let me know.
           </p>
         </div>
       </div>

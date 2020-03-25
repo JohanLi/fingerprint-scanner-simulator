@@ -19,9 +19,6 @@ const plugins = [
 
 let additionalClientConfig = {};
 
-let clientConfig = {};
-let serverConfig = {};
-
 module.exports = (env = {}) => {
   const { development } = env;
 
@@ -105,8 +102,8 @@ module.exports = (env = {}) => {
     },
     output: {
       filename: 'bundle-[hash].js',
-      path: path.join(__dirname, 'build/client'),
-      publicPath: '/',
+      path: path.join(__dirname, 'build'),
+      publicPath: development ? '/' : './fingerprint-scanner-simulator/',
     },
     plugins,
     ...additionalClientConfig,

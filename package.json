@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "start": "webpack-dev-server --hot --env.development"
+    "start": "webpack-dev-server --hot --env.development",
+    "build": "rm -rf ./build && webpack --mode production"
   },
   "author": "",
   "license": "ISC",
