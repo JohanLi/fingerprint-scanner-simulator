@@ -13,6 +13,7 @@ let imageFilename = '[name]-[contenthash].webp';
 const plugins = [
   new HtmlWebpackPlugin({
     template: './src/index.html',
+    favicon: './src/favicon-7b2b909ae59ca59d32fae4656050a4bc.ico',
     inject: 'body',
   }),
 ];
