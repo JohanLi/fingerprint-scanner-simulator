@@ -14,3 +14,12 @@ If enough people find this simulator useful, there are a couple of TODOs:
 and configuration.
 - Reduce the amount of unnecessary rerenders.
 - Get rid of the setTimeout() workaround.
+
+## Getting started
+
+Install latest Node, and run the following:
+
+```
+npm install
+npm start
+```
