@@ -1,0 +1,23 @@
+.stats {
+  margin-top: auto;
+
+  .lastRun {
+    opacity: 0.4;
+  }
+
+  .thisRun {
+    margin-top: 10px;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-size: 0.6em;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (min-device-width : 768px) {
+  .stats {
+    font-size: 1.5em;
+  }
+}

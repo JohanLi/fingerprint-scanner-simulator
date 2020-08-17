@@ -30,7 +30,7 @@ module.exports = (env = {}) => {
 
     additionalClientConfig = {
       mode: 'development',
-      devtool: 'source-map',
+      devtool: 'eval-cheap-module-source-map',
       watch: true,
       devServer: {
         hot: true,

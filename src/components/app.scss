@@ -73,56 +73,6 @@ body {
   }
 }
 
-.stats {
-  margin-top: auto;
-
-  .lastRun {
-    opacity: 0.4;
-  }
-
-  .thisRun {
-    margin-top: 10px;
-  }
-
-  .title {
-    text-transform: uppercase;
-    font-size: 0.6em;
-    white-space: nowrap;
-  }
-}
-
-.choices {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.choice {
-  width: 25%;
-  opacity: 0.4;
-  cursor: pointer;
-
-  img {
-    width: 100%;
-    height: auto;
-    max-width: 128px;
-    display: block;
-  }
-
-  &.selected {
-    opacity: 1;
-  }
-}
-
-.about {
-  margin: 50px 0 20px 0;
-
-  a {
-    text-decoration: none;
-    color: #4afcfe;
-  }
-}
-
 h2 {
   font-size: 1.4em;
   margin: 50px 0 10px 0;
@@ -135,9 +85,5 @@ h2 {
 @media only screen and (min-device-width : 768px) {
   .mode {
     font-size: 1.2em;
-  }
-
-  .stats {
-    font-size: 1.5em;
   }
 }
