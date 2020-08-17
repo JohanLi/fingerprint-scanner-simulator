@@ -5,7 +5,7 @@ import { reducer, initialState, modes } from '../hooks';
 import Stats from './Stats';
 import Choices from './Choices';
 import About from './About';
-import { fingerprints } from '../assets';
+import { fingerprints } from '../require';
 
 import styles from './app.scss';
 

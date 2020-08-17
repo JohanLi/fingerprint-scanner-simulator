@@ -2,7 +2,7 @@ import React, { ReactElement, Dispatch } from 'react';
 import classNames from 'classnames';
 
 import { State, Action } from '../hooks';
-import { fingerprints } from '../assets';
+import { fingerprints } from '../require';
 
 import styles from './choices.scss';
 

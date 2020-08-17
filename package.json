@@ -6,6 +6,7 @@
     "start": "webpack-dev-server --hot --env.development",
     "build": "rm -rf ./build && webpack --mode production",
     "lint-staged": "lint-staged",
+    "test": "jest",
     "test:lint": "eslint ./src/**/*.{ts,tsx}",
     "test:tsc": "tsc --skipLibCheck"
   },
@@ -59,6 +60,7 @@
   },
   "pre-commit": [
     "lint-staged",
+    "test",
     "test:lint",
     "test:tsc"
   ],
