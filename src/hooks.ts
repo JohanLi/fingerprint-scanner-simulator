@@ -38,7 +38,7 @@ export interface State {
 
 export type Action =
   | { type: 'SET_MODE'; mode: Mode }
-  | { type: 'SELECT_ELEMENT'; number: number }
+  | { type: 'ADD_ELEMENT'; number: number }
   | { type: 'REMOVE_ELEMENT'; number: number }
   | { type: 'STOP_WRONG_FLASH' };
 
@@ -56,7 +56,7 @@ export const reducer = (state: State, action: Action): State => {
         mode,
       };
     }
-    case 'SELECT_ELEMENT': {
+    case 'ADD_ELEMENT': {
       const selectedElements = [...state.selectedElements, action.number];
       const fingerprint = FINGERPRINTS.find(
         (f) => f.variant === state.shuffledFingerprints[0],
@@ -143,9 +143,9 @@ export const initialState = (): State => ({
   mode: 'normal',
 });
 
+// https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 type IntervalFunction = () => void;
 
-// https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 export const useInterval = (
   callback: IntervalFunction,
   delay: number,

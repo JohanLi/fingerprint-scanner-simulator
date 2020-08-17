@@ -25,7 +25,7 @@ const Choices = (props: Props): ReactElement => {
       [styles.choice]: true,
       [styles.selected]: selected,
     });
-    const type = selected ? 'REMOVE_ELEMENT' : 'SELECT_ELEMENT';
+    const type = selected ? 'REMOVE_ELEMENT' : 'ADD_ELEMENT';
     const key = `${shuffledFingerprints[0]}-${i}`;
 
     return (

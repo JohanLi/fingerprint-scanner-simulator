@@ -109,7 +109,8 @@
   "jest": {
     "preset": "ts-jest",
     "moduleNameMapper": {
-      "\\.(png|scss)$": "identity-obj-proxy"
+      "\\.(png|scss)$": "identity-obj-proxy",
+      "^lodash-es$": "lodash"
     }
   }
 }
