@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
-    "lodash-es": "^4.17.15",
+    "lodash.shuffle": "^4.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -26,7 +26,7 @@
     "@babel/preset-typescript": "^7.10.4",
     "@types/classnames": "^2.2.10",
     "@types/jest": "^26.0.10",
-    "@types/lodash-es": "^4.17.3",
+    "@types/lodash.shuffle": "^4.2.6",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
     "@types/react-test-renderer": "^16.9.3",

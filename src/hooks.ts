@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { isEqual, shuffle, sortBy } from 'lodash-es';
+import shuffle from 'lodash.shuffle';
+import { isCorrect } from './utils';
 
 const FINGERPRINTS = [
   {
@@ -76,12 +77,7 @@ export const reducer = (state: State, action: Action): State => {
         };
       }
 
-      const correct = isEqual(
-        sortBy(selectedElements),
-        fingerprint.correctElements,
-      );
-
-      if (!correct) {
+      if (!isCorrect(selectedElements, fingerprint.correctElements)) {
         return {
           ...state,
           selectedElements: [],

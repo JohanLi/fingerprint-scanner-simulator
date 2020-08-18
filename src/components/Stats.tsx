@@ -1,8 +1,7 @@
 import React, { ReactElement, useState } from 'react';
-import { random } from 'lodash-es';
 
 import { State, useInterval } from '../hooks';
-import { formatTimestamp } from '../utils';
+import { formatTimestamp, random } from '../utils';
 
 import styles from './stats.scss';
 

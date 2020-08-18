@@ -12,7 +12,8 @@ import styles from './app.scss';
 const App = (): ReactElement => {
   const [state, dispatch] = useReducer(reducer, initialState());
 
-  // TODO: find a method to trigger the flashing without setTimeout()
+  // TODO can this be solved without setTimeout()?
+  // https://github.com/facebook/react/issues/7142
   useEffect(() => {
     if (state.wrongFlash) {
       setTimeout(() => dispatch({ type: 'STOP_WRONG_FLASH' }), 50);
