@@ -6,7 +6,6 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminWebp = require('imagemin-webp');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-let cssHmr = false;
 let cssFilename = 'styles-[contenthash].css';
 let imageFilename = '[name]-[contenthash].webp';
 
@@ -24,7 +23,6 @@ module.exports = (env = {}) => {
   const { development } = env;
 
   if (development) {
-    cssHmr = true;
     cssFilename = 'styles.css';
     imageFilename = '[name].[ext]';
 
@@ -66,9 +64,6 @@ module.exports = (env = {}) => {
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: cssHmr,
-              },
             },
             {
               loader: 'css-loader',
