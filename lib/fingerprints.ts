@@ -1,4 +1,9 @@
-const fingerprintsRequireContext = require.context('./assets/', true, /\.webp/);
+interface RequireContext {
+  keys(): string[];
+  (id: string): any;
+}
+
+let fingerprintsRequireContext: RequireContext;
 
 const fingerprintI = [1, 2, 3, 4] as const;
 export type FingerprintI = typeof fingerprintI[number];
@@ -7,6 +12,8 @@ export const fingerprintElementI = [1, 2, 3, 4, 5, 6, 7, 8];
 export type FingerprintElementI = typeof fingerprintElementI[number];
 
 export const load = () => {
+  fingerprintsRequireContext = require.context('./assets/', true, /\.webp/)
+
   const promises = fingerprintsRequireContext.keys().map(
     (key) =>
       new Promise<void>((resolve) => {
