@@ -5,18 +5,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin=""
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+        <Head />
         <body className="overflow-y-scroll">
           <Main />
           <NextScript />

@@ -1,4 +1,4 @@
-const fingerprintsRequireContext = require.context('./assets/', true, /\.png$/);
+const fingerprintsRequireContext = require.context('./assets/', true, /\.webp/);
 
 const fingerprintI = [1, 2, 3, 4] as const;
 export type FingerprintI = typeof fingerprintI[number];
@@ -20,9 +20,9 @@ export const load = () => {
 };
 
 export const getFingerprint = (i: FingerprintI) =>
-  fingerprintsRequireContext(`./finger-${i}.png`).default.src;
+  fingerprintsRequireContext(`./finger-${i}.webp`).default.src;
 
 export const getFingerprintElement = (
   i: FingerprintI,
   j: FingerprintElementI,
-) => fingerprintsRequireContext(`./finger-${i}-${j}.png`).default.src;
+) => fingerprintsRequireContext(`./finger-${i}-${j}.webp`).default.src;
