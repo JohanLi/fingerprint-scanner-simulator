@@ -45,6 +45,7 @@ const App = () => {
               draggable={false}
               width="400"
               height="512"
+              alt=""
             />
           </div>
           <div className="flex flex-col justify-between">
