@@ -23,16 +23,16 @@ const App = () => {
   }, [state.wrongFlash]);
 
   if (!state.fingerprintsLoaded) {
-    return (
-      <div />
-    );
+    return <div />;
   }
 
   return (
-    <div className={classNames(
-      'pt-6 pb-24 px-2 text-white transition-colors ease-in-out',
-      state.wrongFlash ? 'bg-red-600 duration-0' : 'duration-500 bg-black',
-    )}>
+    <div
+      className={classNames(
+        'pt-6 pb-24 px-2 text-white transition-colors ease-in-out',
+        state.wrongFlash ? 'bg-red-600 duration-0' : 'duration-500 bg-black',
+      )}
+    >
       <div className="max-w-2xl mx-auto">
         <div className="flex justify-between">
           <div>

@@ -10,11 +10,8 @@ interface Props {
 }
 
 const Choices = (props: Props) => {
-  const {
-    shuffledElements,
-    shuffledFingerprints,
-    selectedElements,
-  } = props.state;
+  const { shuffledElements, shuffledFingerprints, selectedElements } =
+    props.state;
 
   const choicesJsx = shuffledElements.map((i) => {
     const selected = selectedElements.includes(i);
@@ -29,10 +26,7 @@ const Choices = (props: Props) => {
         <img
           src={getFingerprintElement(shuffledFingerprints[0], i)}
           onClick={() => props.dispatch({ type, number: i })}
-          className={classNames(
-            'cursor-pointer',
-            selected ? '' : 'opacity-40',
-          )}
+          className={classNames('cursor-pointer', selected ? '' : 'opacity-40')}
           draggable={false}
           width="128"
           height="128"

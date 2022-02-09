@@ -1,9 +1,16 @@
 import { useEffect, useRef } from 'react';
 import shuffle from 'lodash.shuffle';
 import { isCorrect } from './utils';
-import { fingerprintElementI, FingerprintElementI, FingerprintI } from './fingerprints';
+import {
+  fingerprintElementI,
+  FingerprintElementI,
+  FingerprintI,
+} from './fingerprints';
 
-const FINGERPRINTS: { variant: FingerprintI, correctElements: FingerprintElementI[] }[] = [
+const FINGERPRINTS: {
+  variant: FingerprintI;
+  correctElements: FingerprintElementI[];
+}[] = [
   {
     variant: 1,
     correctElements: [1, 4, 6, 7],
@@ -28,7 +35,7 @@ export const modes = ['normal', 'hard'] as const;
 type Mode = typeof modes[number];
 
 export interface State {
-  fingerprintsLoaded: boolean,
+  fingerprintsLoaded: boolean;
   shuffledFingerprints: FingerprintI[];
   shuffledElements: FingerprintElementI[];
   selectedElements: FingerprintElementI[];
