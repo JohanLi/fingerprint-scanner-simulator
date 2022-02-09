@@ -18,7 +18,7 @@ export default function Main({ state, dispatch }: Props) {
           <img
             src={getFingerprint(state.shuffledFingerprints[0])}
             className={classNames(
-              'opacity-40',
+              'opacity-50',
               state.mode === 'hard' ? 'invisible' : '',
             )}
             draggable={false}
@@ -33,7 +33,7 @@ export default function Main({ state, dispatch }: Props) {
               <div
                 className={classNames(
                   'cursor-pointer',
-                  state.mode === mode ? '' : 'opacity-40',
+                  state.mode === mode ? '' : 'opacity-50',
                 )}
                 onClick={() => dispatch({ type: 'SET_MODE', mode })}
                 key={mode}

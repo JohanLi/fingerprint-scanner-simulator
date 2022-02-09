@@ -18,7 +18,7 @@ const Stats = (props: Props) => {
 
   return (
     <div className="text-right space-y-4">
-      <div className="opacity-40">
+      <div className="opacity-50">
         <div className="mb-1">Last run</div>
         {lastRun ? formatTimestamp(lastRun) : '-'}
       </div>
