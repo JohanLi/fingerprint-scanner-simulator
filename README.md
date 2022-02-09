@@ -13,6 +13,10 @@ npm install
 npm run dev
 ```
 
+Then, navigate to:
+
+http://localhost:3000/gta-online/fingerprint-scanner-simulator
+
 ## Links
 
 https://johan.li/gta-online/fingerprint-scanner-simulator
