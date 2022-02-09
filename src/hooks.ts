@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 import shuffle from 'lodash.shuffle';
 import { isCorrect } from './utils';
+import { fingerprintElementI, FingerprintElementI, FingerprintI } from './fingerprints';
 
-const FINGERPRINTS = [
+const FINGERPRINTS: { variant: FingerprintI, correctElements: FingerprintElementI[] }[] = [
   {
     variant: 1,
     correctElements: [1, 4, 6, 7],
@@ -21,15 +22,16 @@ const FINGERPRINTS = [
   },
 ];
 
-const ELEMENTS = [1, 2, 3, 4, 5, 6, 7, 8];
+const ELEMENTS = fingerprintElementI;
 
 export const modes = ['normal', 'hard'] as const;
 type Mode = typeof modes[number];
 
 export interface State {
-  shuffledFingerprints: number[];
-  shuffledElements: number[];
-  selectedElements: number[];
+  fingerprintsLoaded: boolean,
+  shuffledFingerprints: FingerprintI[];
+  shuffledElements: FingerprintElementI[];
+  selectedElements: FingerprintElementI[];
   wrongFlash: boolean;
   startTimestamp: number;
   lastRun: number;
@@ -38,6 +40,7 @@ export interface State {
 }
 
 export type Action =
+  | { type: 'FINGERPRINTS_LOADED' }
   | { type: 'SET_MODE'; mode: Mode }
   | { type: 'ADD_ELEMENT'; number: number }
   | { type: 'REMOVE_ELEMENT'; number: number }
@@ -45,6 +48,12 @@ export type Action =
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
+    case 'FINGERPRINTS_LOADED': {
+      return {
+        ...state,
+        fingerprintsLoaded: true,
+      };
+    }
     case 'SET_MODE': {
       const { mode } = action;
 
@@ -54,6 +63,7 @@ export const reducer = (state: State, action: Action): State => {
 
       return {
         ...initialState(),
+        fingerprintsLoaded: state.fingerprintsLoaded,
         mode,
       };
     }
@@ -129,6 +139,7 @@ export const reducer = (state: State, action: Action): State => {
 };
 
 export const initialState = (): State => ({
+  fingerprintsLoaded: false,
   shuffledFingerprints: shuffle(FINGERPRINTS.map((f) => f.variant)),
   shuffledElements: shuffle(ELEMENTS),
   selectedElements: [],

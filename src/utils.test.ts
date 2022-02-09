@@ -1,26 +1,4 @@
-import { loadAssets, formatTimestamp, isCorrect } from './utils';
-
-test('loadAssets', async () => {
-  Object.defineProperty(global.Image.prototype, 'src', {
-    set() {
-      setTimeout(() => this.onload());
-    },
-  });
-
-  const map: { [key: string]: string } = {
-    '1.png': '/assets/1.png',
-    '2.png': '/assets/2.png',
-  };
-
-  const assets = (id: string) => ({
-    default: map[id],
-  });
-  assets.keys = () => Object.keys(map);
-
-  const loaded = await loadAssets(assets);
-
-  expect(loaded.every((l) => l instanceof HTMLImageElement)).toEqual(true);
-});
+import { formatTimestamp, isCorrect } from './utils';
 
 test('formatTimestamp', () => {
   expect(formatTimestamp(1234)).toEqual('1:23');

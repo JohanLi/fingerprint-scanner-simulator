@@ -11,4 +11,3 @@ jobs:
           npm ci
           npm test
           npm run test:tsc
-          npm run test:lint

@@ -10,7 +10,7 @@ Install latest Node, and run the following:
 
 ```
 npm install
-npm start
+npm run dev
 ```
 
 ## Links

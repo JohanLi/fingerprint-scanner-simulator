@@ -1,115 +1,41 @@
 {
   "name": "fingerprint-scanner-simulator",
   "version": "0.1.0",
-  "description": "",
+  "description": "A simulator for practicing the Casino Heist fingerprint scanner hack in GTA Online",
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "rm -rf ./build && webpack --mode production",
-    "lint-staged": "lint-staged",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "test": "jest",
-    "test:lint": "eslint ./src/**/*.{ts,tsx}",
     "test:tsc": "tsc --skipLibCheck"
   },
   "author": "Johan Li",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "classnames": "^2.3.1",
     "lodash.shuffle": "^4.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "next": "12.0.10",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/polyfill": "^7.10.4",
-    "@babel/preset-env": "^7.16.8",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7",
-    "@types/classnames": "^2.3.0",
     "@types/jest": "^27.4.0",
     "@types/lodash.shuffle": "^4.2.6",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
-    "@types/react-test-renderer": "^17.0.1",
-    "@types/webpack-env": "^1.16.3",
-    "@typescript-eslint/eslint-plugin": "^5.9.1",
-    "@typescript-eslint/parser": "^5.9.1",
-    "babel-loader": "^8.2.3",
-    "css-loader": "^6.5.1",
-    "eslint": "^8.6.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.0",
-    "identity-obj-proxy": "^3.0.0",
-    "imagemin-webp": "^6.0.0",
-    "imagemin-webpack-plugin": "^2.4.2",
-    "jest": "^27.4.7",
-    "jest-mock": "^27.4.6",
-    "lint-staged": "^12.1.7",
-    "mini-css-extract-plugin": "^2.4.6",
-    "pre-commit": "^1.2.2",
-    "prettier": "^2.5.1",
-    "react-hot-loader": "^4.13.0",
-    "react-test-renderer": "^17.0.2",
-    "sass-loader": "^12.4.0",
-    "ts-jest": "^27.1.2",
-    "typescript": "^4.5.4",
-    "webpack": "^5.66.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.3"
-  },
-  "pre-commit": [
-    "lint-staged",
-    "test",
-    "test:lint",
-    "test:tsc"
-  ],
-  "lint-staged": {
-    "*.{ts,tsx,js}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint",
-      "react-hooks"
-    ],
-    "extends": [
-      "plugin:@typescript-eslint/recommended",
-      "plugin:react/recommended"
-    ],
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    }
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-react",
-      "@babel/preset-typescript",
-      [
-        "@babel/preset-env",
-        {
-          "targets": "defaults"
-        }
-      ]
-    ],
-    "plugins": [
-      "react-hot-loader/babel"
-    ],
-    "compact": false
+    "@types/node": "17.0.16",
+    "@types/react": "17.0.39",
+    "autoprefixer": "^10.4.2",
+    "eslint": "8.8.0",
+    "eslint-config-next": "12.0.10",
+    "jest": "^27.5.1",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.19",
+    "ts-jest": "^27.1.3",
+    "typescript": "4.5.5"
   },
   "jest": {
     "preset": "ts-jest",
     "moduleNameMapper": {
-      "\\.(png|scss)$": "identity-obj-proxy",
+      "\\.(png)$": "identity-obj-proxy",
       "^lodash-es$": "lodash"
     },
     "testEnvironment": "jsdom"

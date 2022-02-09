@@ -2,6 +2,7 @@ import { mocked } from 'jest-mock';
 
 import * as hooks from './hooks';
 import shuffle from 'lodash.shuffle';
+import { State } from './hooks';
 
 jest.mock('lodash.shuffle', () =>
   jest.fn((array: number[]): number[] => array),
@@ -102,7 +103,7 @@ test('completing a run', () => {
   const startTimestamp = 30000;
   const completedTimestamp = 60000;
 
-  const state = {
+  const state: State = {
     ...initialState(),
     shuffledFingerprints: [1],
     selectedElements: [7, 1, 6],
