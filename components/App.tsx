@@ -1,9 +1,9 @@
 import React, { useReducer, useEffect } from 'react';
 
-import { reducer, initialState } from './hooks';
+import { reducer, initialState } from '../lib/hooks';
 import About from './About';
-import { load } from './fingerprints';
-import { classNames } from './utils';
+import { load } from '../lib/fingerprints';
+import { classNames } from '../lib/utils';
 import Main from './Main';
 import Loading from './Loading';
 

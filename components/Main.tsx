@@ -1,6 +1,6 @@
-import { getFingerprint } from './fingerprints';
-import { classNames } from './utils';
-import { Action, modes, State } from './hooks';
+import { getFingerprint } from '../lib/fingerprints';
+import { classNames } from '../lib/utils';
+import { Action, modes, State } from '../lib/hooks';
 import Stats from './Stats';
 import Choices from './Choices';
 import React, { Dispatch } from 'react';

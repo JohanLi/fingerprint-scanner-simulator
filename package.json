@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "A simulator for practicing the Casino Heist fingerprint scanner hack in GTA Online",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3002",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3002",
     "lint": "next lint",
-    "prettier": "prettier --write src/ pages/",
+    "prettier": "prettier --write components/ lib/ pages/",
     "test": "jest",
     "test:tsc": "tsc --skipLibCheck"
   },
