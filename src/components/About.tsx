@@ -1,5 +1,3 @@
-import React from 'react';
-
 const h2Class = 'text-xl font-medium text-green-500 mt-12';
 const pClass = 'mt-4';
 const aClass = 'font-medium text-cyan-400 hover:text-cyan-300';

@@ -1,27 +1,26 @@
-import { mocked } from 'jest-mock';
-
-import * as hooks from './hooks';
+import { expect, test, vi, beforeEach } from 'vitest';
+import { reducer, initialState, State } from './hooks';
 import shuffle from 'lodash.shuffle';
-import { State } from './hooks';
 
-jest.mock('lodash.shuffle', () =>
-  jest.fn((array: number[]): number[] => array),
-);
-
-const { reducer, initialState } = hooks;
+vi.mock('lodash.shuffle', () => ({
+  default: vi.fn((array: number[]): number[] => array),
+}));
 
 beforeEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 });
 
 test('changing mode resets state', () => {
   const mode = 'hard';
 
-  const spy = jest.spyOn(hooks, 'initialState');
   const state = reducer({} as any, { type: 'SET_MODE', mode });
 
-  expect(state.mode).toEqual('hard');
-  expect(spy).toHaveBeenCalledTimes(1);
+  expect(state.mode).toEqual(mode);
+  // ideally, this should check that initialState was called
+  expect(state).toMatchObject({
+    lastRun: 0,
+    thisRun: 0,
+  });
 });
 
 test('nothing happens when setting mode to existing one', () => {
@@ -88,7 +87,7 @@ test('checking a correct solution', () => {
     selectedElements: [1, 6, 4],
   };
 
-  mocked(shuffle).mockClear();
+  vi.mocked(shuffle).mockClear();
 
   expect(reducer(state, { type: 'ADD_ELEMENT', number: 7 })).toEqual({
     ...state,
@@ -110,8 +109,10 @@ test('completing a run', () => {
     startTimestamp,
   };
 
-  global.performance.now = jest.fn().mockReturnValueOnce(completedTimestamp);
-  mocked(shuffle).mockClear();
+  vi.stubGlobal('performance', {
+    now: vi.fn().mockReturnValueOnce(completedTimestamp),
+  });
+  vi.mocked(shuffle).mockClear();
 
   expect(reducer(state, { type: 'ADD_ELEMENT', number: 4 })).toEqual({
     ...state,

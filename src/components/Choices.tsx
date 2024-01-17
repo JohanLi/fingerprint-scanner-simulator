@@ -1,4 +1,4 @@
-import React, { Dispatch } from 'react';
+import { Dispatch } from 'preact/hooks';
 
 import { State, Action } from '../lib/hooks';
 import { getFingerprintElement } from '../lib/fingerprints';

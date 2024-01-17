@@ -9,14 +9,14 @@ wants to maximize their take.
 Install latest Node, and run the following:
 
 ```
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
-
-Then, navigate to:
-
-http://localhost:3002/gta-online/fingerprint-scanner-simulator
 
 ## Links
 
 https://johan.li/gta-online/fingerprint-scanner-simulator
+
+## Notes
+
+The project was bootstrapped using `pnpm create preact`.

@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest';
 import { formatTimestamp, isCorrect } from './utils';
 
 test('formatTimestamp', () => {

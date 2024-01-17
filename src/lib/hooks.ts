@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'preact/hooks';
 import shuffle from 'lodash.shuffle';
 import { isCorrect } from './utils';
 import {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'preact/hooks';
 
 import { State, useInterval } from '../lib/hooks';
 import { formatTimestamp, random } from '../lib/utils';

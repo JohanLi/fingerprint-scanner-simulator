@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import { useReducer, useEffect } from 'preact/hooks';
 
 import { reducer, initialState } from '../lib/hooks';
 import About from './About';

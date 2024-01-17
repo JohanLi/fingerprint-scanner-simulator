@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Loading() {
   return (
     <div className="h-96 pb-12 flex flex-col items-center justify-center">
