@@ -12,5 +12,10 @@
   <body class="overflow-y-scroll">
     <div id="app"></div>
     <script prerender type="module" src="/src/index.tsx"></script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "%VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN%"}'
+    ></script>
   </body>
 </html>
