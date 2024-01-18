@@ -1,10 +1,27 @@
-import { expect, test } from 'vitest'
+import { expect, test, describe } from 'vitest'
 import { formatTimestamp, isCorrect } from './utils'
 
-test('formatTimestamp', () => {
-  expect(formatTimestamp(1234)).toEqual('1:23')
-  expect(formatTimestamp(12345)).toEqual('12:35')
-  expect(formatTimestamp(123456)).toEqual('123:46')
+describe('formatTimestamp', () => {
+  test('shows centiseconds as 0:xx', () => {
+    expect(formatTimestamp(0)).toEqual('0:00')
+    expect(formatTimestamp(10)).toEqual('0:01')
+    expect(formatTimestamp(990)).toEqual('0:99')
+  })
+
+  test('seconds is only padded if minutes exist', () => {
+    expect(formatTimestamp(5100)).toEqual('5:10')
+    expect(formatTimestamp(65100)).toEqual('1:05:10')
+  })
+
+  // the minigame puzzle is designed to be solved within a minute
+  test('hours is never shown', () => {
+    expect(formatTimestamp(6000000)).toEqual('100:00:00')
+  })
+
+  test('time is floored', () => {
+    expect(formatTimestamp(9)).toEqual('0:00')
+    expect(formatTimestamp(65599)).toEqual('1:05:59')
+  })
 })
 
 test('isCorrect', () => {

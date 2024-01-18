@@ -2,8 +2,15 @@ export const classNames = (...classes: string[]): string =>
   classes.filter(Boolean).join(' ')
 
 export const formatTimestamp = (milliseconds: number): string => {
-  const seconds = (milliseconds / 1000).toFixed(2)
-  return seconds.replace('.', ':')
+  let minutes = Math.floor(milliseconds / 60000).toString()
+  let seconds = Math.floor((milliseconds % 60000) / 1000).toString()
+  let centiseconds = Math.floor((milliseconds % 1000) / 10).toString()
+
+  if (minutes === '0') {
+    return `${seconds}:${centiseconds.padStart(2, '0')}`
+  }
+
+  return `${minutes}:${seconds.padStart(2, '0')}:${centiseconds.padStart(2, '0')}`
 }
 
 export const random = (min: number, max: number): number =>

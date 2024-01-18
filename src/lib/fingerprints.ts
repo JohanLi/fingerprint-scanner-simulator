@@ -84,6 +84,13 @@ export type FingerprintI = (typeof fingerprintI)[number]
 export const fingerprintElementI = [1, 2, 3, 4, 5, 6, 7, 8]
 export type FingerprintElementI = (typeof fingerprintElementI)[number]
 
+/*
+  The minigame and its timer shouldn't begin before all the images are loaded, because seeing what's in
+  an image is essential to this minigame. You could reduce the waiting time by making separate loads
+  for each fingerprint.
+
+  While the elements are derived from the fingerprints, they aren't actual slices.
+ */
 export const load = () => {
   const promises = Object.values(fingerprintMap).map(
     (src) =>
