@@ -1,23 +1,26 @@
-import { useState } from 'preact/hooks';
+import { useState } from 'preact/hooks'
 
-import { State, useInterval } from '../lib/hooks';
-import { formatTimestamp, random } from '../lib/utils';
+import { State, useInterval } from '../lib/hooks'
+import { formatTimestamp, random } from '../lib/utils'
 
 interface Props {
-  state: State;
+  state: State
 }
 
 const Stats = (props: Props) => {
-  const { startTimestamp, lastRun } = props.state;
+  const { startTimestamp, lastRun } = props.state
 
-  const [thisRun, setThisRun] = useState(0);
+  const [thisRun, setThisRun] = useState(0)
 
-  useInterval(() => {
-    setThisRun(performance.now() - startTimestamp);
-  }, random(40, 60));
+  useInterval(
+    () => {
+      setThisRun(performance.now() - startTimestamp)
+    },
+    random(40, 60),
+  )
 
   return (
-    <div className="text-right space-y-4">
+    <div className="space-y-4 text-right">
       <div className="opacity-50">
         <div className="mb-1">Last run</div>
         {lastRun ? formatTimestamp(lastRun) : '-'}
@@ -27,7 +30,7 @@ const Stats = (props: Props) => {
         {formatTimestamp(thisRun)}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Stats;
+export default Stats

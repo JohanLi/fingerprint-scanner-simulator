@@ -1,10 +1,10 @@
-const h2Class = 'text-xl font-medium text-green-500 mt-12';
-const pClass = 'mt-4';
-const aClass = 'font-medium text-cyan-400 hover:text-cyan-300';
+const h2Class = 'text-xl font-medium text-green-500 mt-12 first:mt-0'
+const pClass = 'mt-4'
+const aClass = 'font-medium text-cyan-400 hover:text-cyan-300'
 
 export default function About() {
   return (
-    <div className="-mt-12">
+    <>
       <h2 className={h2Class}>What’s this?</h2>
       <p className={pClass}>
         <span className="italic">The Diamond Casino Heist</span> in GTA Online
@@ -35,6 +35,6 @@ export default function About() {
         </a>
         .
       </p>
-    </div>
-  );
+    </>
+  )
 }
